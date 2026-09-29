@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "empresa": "Nuvem Digital",
+    "cargo": "Desenvolvedor(a) Frontend Júnior",
+    "requisitos": ["JavaScript", "Git", "GitHub", "Node.js", "React"],
+    "salário": "R$ 3.000 a R$ 4.000",
+    "modalidade": "Remoto",
+    "localização": "Brasil",
+    "tipo_contrato": "CLT",
+    "benefícios": ["Vale-refeição", "Plano de saúde", "Auxílio home office"]
+  },
+  {
+    "id": 2,
+    "empresa": "Pixel & Código",
+    "cargo": "Frontend Developer Júnior",
+    "requisitos": ["JavaScript", "React", "Git", "GitHub", "CSS", "TypeScript"],
+    "salário": "R$ 3.200 a R$ 4.200",
+    "modalidade": "Híbrido",
+    "localização": "São Paulo, SP",
+    "tipo_contrato": "CLT",
+    "benefícios": ["Vale-transporte", "Vale-refeição", "Seguro de vida"]
+  },
+  {
+    "id": 3,
+    "empresa": "ConectaTech",
+    "cargo": "Pessoa Desenvolvedora Frontend Júnior",
+    "requisitos": [
+      "JavaScript",
+      "TypeScript básico",
+      "React",
+      "CSS",
+      "noções de testes"
+    ],
+    "salário": "R$ 3.500 a R$ 4.500",
+    "modalidade": "Remoto",
+    "localização": "Brasil",
+    "tipo_contrato": "CLT",
+    "benefícios": ["Plano odontológico", "Auxílio educação", "Horário flexível"]
+  },
+  {
+    "id": 4,
+    "empresa": "Estúdio Aurora",
+    "cargo": "Desenvolvedor(a) Web Frontend Júnior",
+    "requisitos": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Figma",
+      "noções de acessibilidade"
+    ],
+    "salário": "R$ 2.800 a R$ 3.800",
+    "modalidade": "Presencial",
+    "localização": "Curitiba, PR",
+    "tipo_contrato": "CLT",
+    "benefícios": ["Vale-refeição", "Plano de saúde", "Cursos online"]
+  },
+  {
+    "id": 5,
+    "empresa": "VivaCommerce",
+    "cargo": "Frontend Júnior — E-commerce",
+    "requisitos": [
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "noções de performance web"
+    ],
+    "salário": "R$ 3.300 a R$ 4.300",
+    "modalidade": "Híbrido",
+    "localização": "Belo Horizonte, MG",
+    "tipo_contrato": "CLT",
+    "benefícios": [
+      "Vale-alimentação",
+      "Plano de saúde",
+      "Participação nos resultados"
+    ]
+  },
+  {
+    "id": 6,
+    "empresa": "Orbit Sistemas",
+    "cargo": "Desenvolvedor(a) Frontend Júnior",
+    "requisitos": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "CSS",
+      "Inglês Intermediário"
+    ],
+    "salário": "R$ 3.000 a R$ 4.000",
+    "modalidade": "Remoto",
+    "localização": "Brasil",
+    "tipo_contrato": "PJ",
+    "benefícios": [
+      "Auxílio internet",
+      "Auxílio equipamento",
+      "Recesso remunerado"
+    ]
+  }
+]
