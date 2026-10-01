@@ -3,3 +3,100 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #f5f7fb;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 20px;
+  color: #1f2937;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #222;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #1f2937;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+form section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.paralel-fields {
+  flex-direction: row;
+  gap: 8px;
+}
+
+.paralel-fields > * {
+  flex: 1;
+  min-width: 0;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #374151;
+  margin-bottom: 1px;
+}
+
+input,
+textarea {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  color: #1f2937;
+  background: #ffffff;
+  border-color: #022b64;
+}
+button {
+  font-family: inherit;
+  background-color: #0445a0;
+  color: #ffffff;
+  border: 0;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+form > div {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+@media (min-width: 768px) {
+  body {
+    max-width: 720px;
+  }
+}

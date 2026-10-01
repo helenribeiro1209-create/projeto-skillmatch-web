@@ -60,17 +60,7 @@
           </div>
 
           <div>
-            <label for="interest-area">Área de interesse:</label>
-            <input
-              type="text"
-              id="interest-area"
-              name="interestArea"
-              placeholder="Ex.: Tecnologia"
-            />
-          </div>
-
-          <div>
-            <label for="skills">Habilidades (separe por vírgula):</label>
+            <label for="skills">Habilidades:</label>
             <textarea
               id="skills"
               name="skills"
@@ -79,56 +69,58 @@
               required
             ></textarea>
           </div>
+          <div class="paralel-fields">
+            <div>
+              <label for="experience-time"> Tempo de experiência: </label>
 
-          <div>
-            <label for="experience-time"> Tempo de experiência (anos): </label>
+              <input
+                type="number"
+                id="experience-time"
+                name="experienceTime"
+                min="0"
+                step="0.5"
+                placeholder="Ex.: 1.5 anos"
+              />
+            </div>
 
-            <input
-              type="number"
-              id="experience-time"
-              name="experienceTime"
-              min="0"
-              step="0.5"
-              placeholder="Ex.: 2"
-            />
-          </div>
-
-          <div>
-            <label for="education">Formação:</label>
-            <input
-              type="text"
-              id="education"
-              name="education"
-              placeholder="Ex.: Ensino superior em andamento"
-            />
+            <div>
+              <label for="education">Formação:</label>
+              <input
+                type="text"
+                id="education"
+                name="education"
+                placeholder="Ex.: Ensino superior em andamento"
+              />
+            </div>
           </div>
         </section>
 
         <!-- LOCALIZAÇÃO -->
         <section>
           <h2>Localização</h2>
+          <div class="paralel-fields">
+            <div>
+              <label for="state">Estado:</label>
+              <input
+                type="text"
+                id="state"
+                name="state"
+                placeholder="Ex.: SC"
+                maxlength="2"
+                autocomplete="address-level1"
+              />
+            </div>
 
-          <div>
-            <label for="state">Estado:</label>
-            <input
-              type="text"
-              id="state"
-              name="state"
-              placeholder="Ex.: SC"
-              maxlength="2"
-              autocomplete="address-level1"
-            />
-          </div>
-
-          <div>
-            <label for="city">Cidade:</label>
-            <input
-              type="text"
-              id="city"
-              name="city"
-              placeholder="Ex.: Blumenau"
-              autocomplete="address-level2"
-            />
+            <div>
+              <label for="city">Cidade:</label>
+              <input
+                type="text"
+                id="city"
+                name="city"
+                placeholder="Ex.: Blumenau"
+                autocomplete="address-level2"
+              />
+            </div>
           </div>
         </section>
 
@@ -136,7 +128,7 @@
         <div>
           <button type="reset">Limpar</button>
 
-          <button type="submit">Buscar vagas</button>
+          <button type="submit">Buscar Vagas</button>
         </div>
       </form>
     </main>
