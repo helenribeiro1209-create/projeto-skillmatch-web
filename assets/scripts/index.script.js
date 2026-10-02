@@ -1,10 +1,49 @@
 import fetchVagas from "./load-vagas.js";
 import registerForm from "./form-cadastro.js";
 
-console.log("Hello, World!");
+import {
+  Vaga,
+  VagaFrontEnd,
+  analisarVaga,
+  processarVagas,
+  encontrarMaiorCompatibilidade,
+  gerarRecomendacoes,
+} from "./motor.js";
 
-const vagas = await fetchVagas();
+// CARREGAR VAGAS
 
-console.log(vagas);
+const dadosVagas = await fetchVagas();
 
-registerForm();
+// TRANSFORMAR DADOS DO JSON EM OBJETOS DO MOTOR
+
+const vagas = dadosVagas.map((dados) => {
+  const cargo = dados.cargo.toLowerCase();
+
+  if (cargo.includes("front")) {
+    return new VagaFrontEnd(dados);
+  }
+
+  return new Vaga(dados);
+});
+
+// RECEBER O CANDIDATO DO FORMULÁRIO
+
+registerForm((candidato) => {
+  // PROCESSAR VAGAS
+
+  const resultados = processarVagas(vagas, candidato, analisarVaga);
+
+  console.log("Resultados:", resultados);
+
+  // MELHOR VAGA
+
+  const melhorVaga = encontrarMaiorCompatibilidade(resultados);
+
+  console.log("Melhor vaga:", melhorVaga);
+
+  // RECOMENDAÇÕES
+
+  const recomendacoes = gerarRecomendacoes(resultados);
+
+  console.log("Recomendações:", recomendacoes);
+});

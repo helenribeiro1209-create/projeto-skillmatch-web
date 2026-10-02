@@ -16,6 +16,8 @@
 
     <main>
       <form id="form-cadastro">
+        <div id="form-message" role="alert" aria-live="polite"></div>
+
         <!-- DADOS PESSOAIS -->
         <section>
           <h2>Dados pessoais</h2>
@@ -48,6 +50,17 @@
         <!-- PERFIL PROFISSIONAL -->
         <section>
           <h2>Perfil profissional</h2>
+
+          <div>
+            <label for="interest-area">Área de interesse:</label>
+            <input
+              type="text"
+              id="interest-area"
+              name="interestArea"
+              placeholder="Ex.: Desenvolvimento Web"
+              required
+            />
+          </div>
 
           <div>
             <label for="position">Cargo desejado:</label>
