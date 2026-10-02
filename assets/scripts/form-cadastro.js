@@ -7,7 +7,6 @@ export default function registerForm() {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const position = document.getElementById("position").value;
-    const interestArea = document.getElementById("interest-area").value;
     const skills = document
       .getElementById("skills")
       .value.split(",")
@@ -21,7 +20,6 @@ export default function registerForm() {
     console.log("Nome:", name);
     console.log("E-mail:", email);
     console.log("Cargo desejado:", position);
-    console.log("Área de interesse:", interestArea);
     console.log("Habilidades:", skills);
     console.log("Tempo de experiência:", experienceTime);
     console.log("Formação:", education);
