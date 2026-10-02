@@ -1,15 +1,19 @@
 export default async function fetchVagas() {
-  const dataURL = "./assets/data/vagas.jso";
+  const dataURL = "./assets/data/vagas.json";
 
   try {
     const response = await fetch(dataURL);
+
+    if (!response.ok) {
+      throw new Error("Falha ao carregar as vagas");
+    }
+
     const vagas = await response.json();
 
     return vagas;
   } catch (error) {
-    return {
-      message: "Error ao carregar as vagas:",
-      error,
-    };
+    console.error(error);
+
+    throw new Error("Erro ao carregar o catálogo de vagas");
   }
 }
