@@ -1,10 +1,13 @@
 import fetchVagas from "./load-vagas.js";
 import registerForm from "./form-cadastro.js";
+import { Vaga } from "./motor.js";
 
-console.log("Hello, World!");
+const dadosVagas = await fetchVagas();
 
-const vagas = await fetchVagas();
+const vagas = dadosVagas.map((dados) => {
+  return new Vaga(dados);
+});
 
-console.log(vagas);
+//console.log("Vagas carregando:", vagas);
 
 registerForm();
