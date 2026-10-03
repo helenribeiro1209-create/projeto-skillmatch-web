@@ -16,8 +16,6 @@
 
     <main>
       <form id="form-cadastro">
-        <div id="form-message" role="alert" aria-live="polite"></div>
-
         <!-- DADOS PESSOAIS -->
         <section>
           <h2>Dados pessoais</h2>
@@ -143,6 +141,12 @@
 
           <button type="submit">Buscar Vagas</button>
         </div>
+
+        <section aria-labelledby="resultados-title">
+          <h2 id="resultados-title">Vagas compatíveis</h2>
+          <div id="vagas-container" aria-live="polite"></div>
+        </section>
+        <div id="form-message" role="alert" aria-live="polite"></div>
       </form>
     </main>
 

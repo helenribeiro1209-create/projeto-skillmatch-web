@@ -100,3 +100,36 @@ form > div {
     max-width: 720px;
   }
 }
+
+#vagas-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.vaga-card {
+  flex: 1 1 280px;
+  padding: 20px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.vaga-card h3 {
+  margin-bottom: 5px;
+  color: #022b64;
+}
+
+.vaga-card h4 {
+  margin-bottom: 15px;
+  color: #374151;
+}
+
+.vaga-card p {
+  margin-bottom: 8px;
+}
+
+.vaga-card strong {
+  color: #1f2937;
+}

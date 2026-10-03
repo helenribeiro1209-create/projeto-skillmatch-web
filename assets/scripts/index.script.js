@@ -10,6 +10,8 @@ import {
   gerarRecomendacoes,
 } from "./motor.js";
 
+import { renderizarVagas } from "./ui.js";
+
 // CARREGAR VAGAS
 
 const dadosVagas = await fetchVagas();
@@ -33,7 +35,7 @@ registerForm((candidato) => {
 
   const resultados = processarVagas(vagas, candidato, analisarVaga);
 
-  console.log("Resultados:", resultados);
+  renderizarVagas(resultados);
 
   // MELHOR VAGA
 
