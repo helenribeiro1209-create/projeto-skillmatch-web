@@ -10,40 +10,64 @@ import {
   gerarRecomendacoes,
 } from "./motor.js";
 
-import { renderizarVagas } from "./ui.js";
+import { renderizarVagas, mostrarMensagem } from "./ui.js";
 
-// CARREGAR VAGAS
+// CARREGAMENTO DAS VAGAS
 
-const dadosVagas = await fetchVagas();
+let vagas = [];
+let erroCarregamento = null;
 
-// TRANSFORMAR DADOS DO JSON EM OBJETOS DO MOTOR
+try {
+  const dadosVagas = await fetchVagas();
 
-const vagas = dadosVagas.map((dados) => {
-  const cargo = dados.cargo.toLowerCase();
+  console.log("Dados recebidos:", dadosVagas);
 
-  if (cargo.includes("front")) {
-    return new VagaFrontEnd(dados);
+  if (dadosVagas.length === 0) {
+    vagas = [];
+  } else {
+    vagas = dadosVagas.map((dados) => {
+      if (
+        dados.cargo.toLowerCase().includes("frontend") ||
+        dados.cargo.toLowerCase().includes("front-end")
+      ) {
+        return new VagaFrontEnd(dados);
+      }
+
+      return new Vaga(dados);
+    });
+  }
+} catch (error) {
+  console.error(error);
+
+  erroCarregamento = error.message;
+  vagas = [];
+}
+// PROCESSAMENTO DO CANDIDATO
+
+registerForm(async (candidato) => {
+  mostrarMensagem("Carregando vagas...");
+
+  await new Promise((resolve) => {
+    setTimeout(resolve, 1500);
+  });
+
+  if (erroCarregamento) {
+    mostrarMensagem(erroCarregamento);
+    return;
   }
 
-  return new Vaga(dados);
-});
+  if (vagas.length === 0) {
+    mostrarMensagem("Nada encontrado.");
+    return;
+  }
 
-// RECEBER O CANDIDATO DO FORMULÁRIO
-
-registerForm((candidato) => {
-  // PROCESSAR VAGAS
-
-  const resultados = processarVagas(vagas, candidato, analisarVaga);
+  const resultados = processarVagas(vagas, candidato);
 
   renderizarVagas(resultados);
-
-  // MELHOR VAGA
 
   const melhorVaga = encontrarMaiorCompatibilidade(resultados);
 
   console.log("Melhor vaga:", melhorVaga);
-
-  // RECOMENDAÇÕES
 
   const recomendacoes = gerarRecomendacoes(resultados);
 

@@ -118,8 +118,8 @@ function analisarVaga(vaga, candidato) {
 
 // CALLBACK
 
-function processarVagas(vagas, candidato, callback) {
-  return vagas.map((vaga) => callback(vaga, candidato));
+function processarVagas(vagas, candidato) {
+  return vagas.map((vaga) => analisarVaga(vaga, candidato));
 }
 
 // MELHOR VAGA

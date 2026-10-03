@@ -1,3 +1,21 @@
+// MENSAGENS DA INTERFACE
+
+export function mostrarMensagem(mensagem) {
+  const container = document.getElementById("vagas-container");
+
+  container.innerHTML = `
+    <p class="mensagem-vagas">
+      ${mensagem}
+    </p>
+  `;
+}
+
+export function limparMensagem() {
+  const container = document.getElementById("vagas-container");
+
+  container.innerHTML = "";
+}
+
 // RENDERIZAÇÃO DAS VAGAS
 
 export function renderizarVagas(resultados) {
