@@ -12,6 +12,7 @@ class Vaga {
     this.localizacao = dados.localização;
     this.tipoContrato = dados.tipo_contrato;
     this.beneficios = dados.benefícios;
+    this.experiencia = dados.experiencia;
   }
 
   // Cálculo de compatibilidade

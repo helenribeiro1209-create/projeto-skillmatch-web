@@ -10,7 +10,12 @@ import {
   gerarRecomendacoes,
 } from "./motor.js";
 
-import { renderizarVagas, mostrarMensagem } from "./ui.js";
+import {
+  renderizarVagas,
+  mostrarMensagem,
+  renderizarMelhorVaga,
+  renderizarRecomendacoes,
+} from "./ui.js";
 
 // CARREGAMENTO DAS VAGAS
 
@@ -67,9 +72,9 @@ registerForm(async (candidato) => {
 
   const melhorVaga = encontrarMaiorCompatibilidade(resultados);
 
-  console.log("Melhor vaga:", melhorVaga);
+  renderizarMelhorVaga(melhorVaga);
 
   const recomendacoes = gerarRecomendacoes(resultados);
 
-  console.log("Recomendações:", recomendacoes);
+  renderizarRecomendacoes(recomendacoes);
 });
