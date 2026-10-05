@@ -25,6 +25,12 @@ export function renderizarVagas(resultados) {
     card.classList.add("vaga-card");
 
     card.innerHTML = `
+     <img
+    class="logo-empresa"
+    src="${resultado.vaga.logo}"
+    alt="Logo da empresa ${resultado.vaga.empresa}"
+  />
+
   <h3>${resultado.vaga.empresa}</h3>
 
   <h4>${resultado.vaga.getRotulo()}</h4>

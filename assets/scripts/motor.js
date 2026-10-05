@@ -5,6 +5,7 @@ class Vaga {
   constructor(dados) {
     this.id = dados.id;
     this.empresa = dados.empresa;
+    this.logo = dados.logo;
     this.cargo = dados.cargo;
     this.requisitos = dados.requisitos;
     this.salario = dados.salário;

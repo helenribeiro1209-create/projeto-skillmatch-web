@@ -2,6 +2,7 @@
   {
     "id": 1,
     "empresa": "Nuvem Digital",
+    "logo": "./assets/images/img-nuvem-digital.png",
     "cargo": "Desenvolvedor(a) Frontend Júnior",
     "requisitos": ["JavaScript", "Git", "GitHub", "Node.js", "React"],
     "salário": "R$ 3.000 a R$ 4.000",
@@ -14,6 +15,7 @@
   {
     "id": 2,
     "empresa": "Pixel & Código",
+    "logo": "./assets/images/img-pixel-codigo.png",
     "cargo": "Frontend Developer Júnior",
     "requisitos": ["JavaScript", "React", "Git", "GitHub", "CSS", "TypeScript"],
     "salário": "R$ 3.200 a R$ 4.200",
@@ -26,6 +28,7 @@
   {
     "id": 3,
     "empresa": "ConectaTech",
+    "logo": "./assets/images/img-conecta-tech.png",
     "cargo": "Pessoa Desenvolvedora Frontend Júnior",
     "requisitos": [
       "JavaScript",
@@ -44,6 +47,7 @@
   {
     "id": 4,
     "empresa": "Estúdio Aurora",
+    "logo": "./assets/images/img-aurora.png",
     "cargo": "Desenvolvedor(a) Web Frontend Júnior",
     "requisitos": [
       "HTML",
@@ -62,6 +66,7 @@
   {
     "id": 5,
     "empresa": "VivaCommerce",
+    "logo": "./assets/images/img-vivacommerce.png",
     "cargo": "Frontend Júnior — E-commerce",
     "requisitos": [
       "React",
@@ -84,6 +89,7 @@
   {
     "id": 6,
     "empresa": "Orbit Sistemas",
+    "logo": "./assets/images/img-orbitsistema.png",
     "cargo": "Desenvolvedor(a) Frontend Júnior",
     "requisitos": [
       "JavaScript",
