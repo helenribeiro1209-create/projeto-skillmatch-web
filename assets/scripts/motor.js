@@ -5,6 +5,7 @@ class Vaga {
   constructor(dados) {
     this.id = dados.id;
     this.empresa = dados.empresa;
+    this.logo = dados.logo;
     this.cargo = dados.cargo;
     this.requisitos = dados.requisitos;
     this.salario = dados.salário;
@@ -12,36 +13,38 @@ class Vaga {
     this.localizacao = dados.localização;
     this.tipoContrato = dados.tipo_contrato;
     this.beneficios = dados.benefícios;
+    this.experiencia = dados.experiencia;
   }
 
   // Cálculo de compatibilidade
-  calcularCompatibilidade(habilidades) {
-    const habilidadesCandidato = habilidades.map(
-      (habilidade) => habilidade.toLowerCase()
+
+  calcularCompatibilidade(habilidadesCandidato) {
+    const habilidadesNormalizadas = habilidadesCandidato.map((habilidade) =>
+      habilidade.toLowerCase().trim(),
     );
 
-    const encontradas = this.requisitos.filter(
-      (requisito) =>
-        habilidadesCandidato.includes(requisito.toLowerCase())
+    const encontradas = this.requisitos.filter((requisito) =>
+      habilidadesNormalizadas.includes(requisito.toLowerCase().trim()),
     );
 
     const faltantes = this.requisitos.filter(
       (requisito) =>
-        !habilidadesCandidato.includes(requisito.toLowerCase())
+        !habilidadesNormalizadas.includes(requisito.toLowerCase().trim()),
     );
 
-    const percentual =
-      this.requisitos.length > 0
-        ? Math.round(
-            (encontradas.length / this.requisitos.length) * 100
-          )
-        : 0;
+    const percentual = Math.round(
+      (encontradas.length / this.requisitos.length) * 100,
+    );
 
     return {
       percentual,
       encontradas,
       faltantes,
     };
+  }
+
+  getRotulo() {
+    return this.cargo;
   }
 }
 
@@ -52,11 +55,21 @@ class VagaFrontEnd extends Vaga {
   constructor(dados) {
     super(dados);
 
-    this.stack = "Frontend";
+    this.stack = this.requisitos.filter((requisito) =>
+      [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "TypeScript",
+        "Git",
+        "GitHub",
+      ].includes(requisito),
+    );
   }
 
   getRotulo() {
-    return `${this.cargo} - ${this.stack}`;
+    return `Front-end | ${this.cargo}`;
   }
 }
 
@@ -91,13 +104,9 @@ const contarAnalises = criarContadorAnalises();
 function analisarVaga(vaga, candidato) {
   const numeroAnalise = contarAnalises();
 
-  const resultado = vaga.calcularCompatibilidade(
-    candidato.habilidades
-  );
+  const resultado = vaga.calcularCompatibilidade(candidato.habilidades);
 
-  const classificacao = classificarCompatibilidade(
-    resultado.percentual
-  );
+  const classificacao = classificarCompatibilidade(resultado.percentual);
 
   return {
     vaga,
@@ -134,28 +143,23 @@ function encontrarMaiorCompatibilidade(resultados) {
 // RECOMENDAÇÕES DE ESTUDO
 
 function gerarRecomendacoes(resultados) {
-  const frequenciaHabilidades = resultados.reduce(
-    (acumulador, resultado) => {
-      resultado.faltantes.forEach((habilidade) => {
-        if (acumulador[habilidade]) {
-          acumulador[habilidade]++;
-        } else {
-          acumulador[habilidade] = 1;
-        }
-      });
+  const frequenciaHabilidades = resultados.reduce((acumulador, resultado) => {
+    resultado.faltantes.forEach((habilidade) => {
+      if (acumulador[habilidade]) {
+        acumulador[habilidade]++;
+      } else {
+        acumulador[habilidade] = 1;
+      }
+    });
 
-      return acumulador;
-    },
-    {}
-  );
+    return acumulador;
+  }, {});
 
-  return Object.entries(frequenciaHabilidades).sort(
-    (a, b) => b[1] - a[1]
-  );
+  return Object.entries(frequenciaHabilidades).sort((a, b) => b[1] - a[1]);
 }
 
 // EXPORTAÇÕES
-//  MÓDULOS ES
+// Módulos ES
 
 export {
   Vaga,

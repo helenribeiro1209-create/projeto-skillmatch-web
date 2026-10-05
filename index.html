@@ -1,27 +1,55 @@
 <!doctype html>
+
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Gestão de vagas" />
+
+    <meta
+      name="description"
+      content="Gestão de vagas e compatibilidade entre candidatos e oportunidades"
+    />
 
     <link rel="stylesheet" href="./assets/styles/index.style.css" />
 
-    <title>Vagas Skillmatch Web</title>
+    <title>SMW Vagas</title>
+  
   </head>
-  <body>
-    <header>
-      <h1>Vagas Skillmatch Web</h1>
-    </header>
 
-    <main>
-      <form id="form-cadastro">
+  <body>
+
+  <header>
+     <img
+      src="./assets/images/smw-vagas.ico"
+      alt="Logo Vagas SkillMatch Web"
+    />
+
+    <h1>Vagas Skillmatch Web</h1>
+  </header>
+
+  <nav aria-label="Navegação principal">
+  <a href="#form-cadastro">Meu perfil</a>
+  <a href="#resultados-title">Vagas</a>
+</nav>
+
+  <section class="hero" aria-label="Apresentação do Vagas SkillMatch">
+    <img
+      src="./assets/images/imagem2.png"
+      alt=""
+    />
+  </section>
+
+  <main>
+    <form id="form-cadastro">
         <!-- DADOS PESSOAIS -->
         <section>
+          <img
           <h2>Dados pessoais</h2>
 
           <div>
             <label for="name">Nome:</label>
+
             <input
               type="text"
               id="name"
@@ -34,6 +62,7 @@
 
           <div>
             <label for="email">E-mail:</label>
+
             <input
               type="email"
               id="email"
@@ -50,17 +79,32 @@
           <h2>Perfil profissional</h2>
 
           <div>
-            <label for="position">Cargo desejado:</label>
+            <label for="interest-area"> Área de interesse: </label>
+
+            <input
+              type="text"
+              id="interest-area"
+              name="interestArea"
+              placeholder="Ex.: Desenvolvimento Web"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="position"> Cargo desejado: </label>
+
             <input
               type="text"
               id="position"
               name="position"
               placeholder="Ex.: Desenvolvedor Front-end"
+              required
             />
           </div>
 
           <div>
-            <label for="skills">Habilidades:</label>
+            <label for="skills"> Habilidades: </label>
+
             <textarea
               id="skills"
               name="skills"
@@ -69,6 +113,7 @@
               required
             ></textarea>
           </div>
+
           <div class="paralel-fields">
             <div>
               <label for="experience-time"> Tempo de experiência: </label>
@@ -79,17 +124,20 @@
                 name="experienceTime"
                 min="0"
                 step="0.5"
-                placeholder="Ex.: 1.5 anos"
+                placeholder="Ex.: 1 anos"
+                required
               />
             </div>
 
             <div>
-              <label for="education">Formação:</label>
+              <label for="education"> Formação: </label>
+
               <input
                 type="text"
                 id="education"
                 name="education"
                 placeholder="Ex.: Ensino superior em andamento"
+                required
               />
             </div>
           </div>
@@ -98,9 +146,11 @@
         <!-- LOCALIZAÇÃO -->
         <section>
           <h2>Localização</h2>
+
           <div class="paralel-fields">
             <div>
-              <label for="state">Estado:</label>
+              <label for="state"> Estado: </label>
+
               <input
                 type="text"
                 id="state"
@@ -108,21 +158,27 @@
                 placeholder="Ex.: SC"
                 maxlength="2"
                 autocomplete="address-level1"
+                required
               />
             </div>
 
             <div>
-              <label for="city">Cidade:</label>
+              <label for="city"> Cidade: </label>
+
               <input
                 type="text"
                 id="city"
                 name="city"
                 placeholder="Ex.: Blumenau"
                 autocomplete="address-level2"
+                required
               />
             </div>
           </div>
         </section>
+
+        <!-- MENSAGEM DO FORMULÁRIO -->
+        <div id="form-message" role="alert" aria-live="polite"></div>
 
         <!-- AÇÕES -->
         <div>
@@ -130,8 +186,31 @@
 
           <button type="submit">Buscar Vagas</button>
         </div>
+
+        <!-- RESULTADOS -->
+        <section aria-labelledby="resultados-title">
+          <h2 id="resultados-title">Vagas compatíveis</h2>
+
+          <div id="vagas-container" aria-live="polite"></div>
+        </section>
+
+        <section aria-labelledby="melhor-vaga-title">
+          <h2 id="melhor-vaga-title">Melhor vaga</h2>
+
+          <div id="melhor-vaga"></div>
+        </section>
+
+        <section aria-labelledby="recomendacoes-title">
+          <h2 id="recomendacoes-title">Recomendações de estudo</h2>
+
+          <div id="recomendacoes-estudo"></div>
+        </section>
       </form>
     </main>
+
+    <footer>
+  <p>Vagas SkillMatch Web — Projeto acadêmico</p>
+</footer>
 
     <script type="module" src="./assets/scripts/index.script.js"></script>
   </body>
